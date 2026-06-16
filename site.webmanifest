@@ -1,0 +1,15 @@
+{
+  "name": "CE Labs — Cryptography Engineering",
+  "short_name": "CE Labs",
+  "description": "Secure systems engineering, verified all the way down to the cryptography.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E2436",
+  "theme_color": "#0E2436",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "/icon-maskable-512.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}

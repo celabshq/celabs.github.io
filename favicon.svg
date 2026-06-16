@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="CE Labs mark">
+  <rect width="64" height="64" fill="#0E2436"></rect>
+  <text x="32" y="39" text-anchor="middle" font-family="&#39;IBM Plex Mono&#39;,&#39;SFMono-Regular&#39;,Menlo,Consolas,monospace" font-size="30" font-weight="700" fill="#FAF6EE" letter-spacing="0.5">CE</text>
+  <rect x="0" y="58" width="64" height="6" fill="#D2912F"></rect>
+</svg>
