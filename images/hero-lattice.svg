@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="A two-dimensional point lattice with its basis vectors — a lattice cryptography motif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#D2912F"/>
+    </marker>
+    <radialGradient id="fade" cx="50%" cy="50%" r="62%">
+      <stop offset="62%" stop-color="#0E2436" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0E2436" stop-opacity="0.55"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ink canvas -->
+  <rect width="800" height="600" fill="#0E2436"/>
+
+  <!-- lattice mesh: faint lines along the two basis directions -->
+  <g stroke="#16607A" stroke-width="1" fill="none" opacity="0.3" stroke-linecap="round">
+    <polyline points="94,530 124,454 154,378 184,302 214,226"/>
+    <polyline points="176,504 206,428 236,352 266,276 296,200"/>
+    <polyline points="258,478 288,402 318,326 348,250 378,174"/>
+    <polyline points="340,452 370,376 400,300 430,224 460,148"/>
+    <polyline points="422,426 452,350 482,274 512,198 542,122"/>
+    <polyline points="504,400 534,324 564,248 594,172 624,96"/>
+    <polyline points="586,374 616,298 646,222 676,146 706,70"/>
+    <polyline points="94,530 176,504 258,478 340,452 422,426 504,400 586,374"/>
+    <polyline points="124,454 206,428 288,402 370,376 452,350 534,324 616,298"/>
+    <polyline points="154,378 236,352 318,326 400,300 482,274 564,248 646,222"/>
+    <polyline points="184,302 266,276 348,250 430,224 512,198 594,172 676,146"/>
+    <polyline points="214,226 296,200 378,174 460,148 542,122 624,96 706,70"/>
+  </g>
+
+  <!-- fundamental parallelogram spanned by the basis -->
+  <polygon points="94,530 176,504 206,428 124,454" fill="#D2912F" opacity="0.1"/>
+
+  <!-- lattice points -->
+  <g fill="#7E94A6">
+    <circle cx="206" cy="428" r="3.4"/><circle cx="236" cy="352" r="3.4"/><circle cx="266" cy="276" r="3.4"/>
+    <circle cx="288" cy="402" r="3.4"/><circle cx="318" cy="326" r="3.4"/><circle cx="348" cy="250" r="3.4"/>
+    <circle cx="340" cy="452" r="3.4"/><circle cx="370" cy="376" r="3.4"/><circle cx="430" cy="224" r="3.4"/><circle cx="460" cy="148" r="3.4"/>
+    <circle cx="534" cy="324" r="3.4"/><circle cx="594" cy="172" r="3.4"/>
+    <circle cx="616" cy="298" r="3.4"/><circle cx="676" cy="146" r="3.4"/>
+  </g>
+
+  <!-- center lattice point, a subtle amber accent -->
+  <circle cx="400" cy="300" r="4" fill="#D2912F" opacity="0.8"/>
+
+  <!-- the same lattice points, very subtly warmed to trace a (sheared) CE -->
+  <g fill="#A98E63" opacity="0.85">
+    <!-- C: top bar, left side, bottom bar (origin completes the lower-left corner) -->
+    <circle cx="214" cy="226" r="3.4"/><circle cx="296" cy="200" r="3.4"/><circle cx="378" cy="174" r="3.4"/>
+    <circle cx="124" cy="454" r="3.4"/><circle cx="154" cy="378" r="3.4"/><circle cx="184" cy="302" r="3.4"/>
+    <circle cx="176" cy="504" r="3.4"/><circle cx="258" cy="478" r="3.4"/>
+    <!-- E: left spine -->
+    <circle cx="422" cy="426" r="3.4"/><circle cx="452" cy="350" r="3.4"/><circle cx="482" cy="274" r="3.4"/><circle cx="512" cy="198" r="3.4"/><circle cx="542" cy="122" r="3.4"/>
+    <!-- E: bottom, middle, top bars -->
+    <circle cx="504" cy="400" r="3.4"/><circle cx="564" cy="248" r="3.4"/><circle cx="624" cy="96" r="3.4"/>
+    <circle cx="586" cy="374" r="3.4"/><circle cx="646" cy="222" r="3.4"/><circle cx="706" cy="70" r="3.4"/>
+  </g>
+
+  <!-- basis vectors from the origin -->
+  <g stroke="#D2912F" stroke-width="2.4" fill="none" stroke-linecap="round">
+    <line x1="94" y1="530" x2="170" y2="506" marker-end="url(#arrow)"/>
+    <line x1="94" y1="530" x2="121" y2="461" marker-end="url(#arrow)"/>
+  </g>
+  <!-- origin (the one amber accent, also the C's lower-left corner) -->
+  <circle cx="94" cy="530" r="4.5" fill="#D2912F"/>
+
+  <!-- soft vignette so the cluster reads as a contained motif -->
+  <rect width="800" height="600" fill="url(#fade)"/>
+
+  <!-- amber baseline bar, echoing the CE seal -->
+  <rect x="0" y="588" width="800" height="12" fill="#D2912F"/>
+</svg>
