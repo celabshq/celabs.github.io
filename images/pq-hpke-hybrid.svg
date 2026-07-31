@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Two key-exchange sources — a continuous elliptic curve group on the left and a discrete lattice point set below it — flow into a combiner and leave as a single sealed key stream: the hybrid post-quantum construction.">
+  <defs>
+    <radialGradient id="pqh-fade" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="#0E2436" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0E2436" stop-opacity="0.6"/>
+    </radialGradient>
+    <style>
+      .pqh-flow {
+        stroke-dasharray: 12 240;
+        animation: pqh-travel 3.6s linear infinite;
+      }
+      .pqh-flow-2 { animation-delay: 0.5s; }
+      @keyframes pqh-travel {
+        from { stroke-dashoffset: 252; }
+        to   { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .pqh-flow { animation: none; stroke-dasharray: none; stroke-opacity: 0.35; }
+      }
+    </style>
+  </defs>
+
+  <!-- ink canvas -->
+  <rect width="1200" height="400" fill="#0E2436"/>
+
+  <!--
+    Left: the classical component. A continuous group, drawn as an ellipse with
+    a handful of points on it.
+    Below: the post-quantum component. A discrete, sheared point lattice
+    L = { i*(48,-10) + j*(14,44) } anchored at (110,260).
+    Both feed the combiner at (600,200); one strand leaves it.
+  -->
+
+  <!-- classical: continuous group -->
+  <g fill="none" stroke="#C7D4DF" stroke-width="2.5" opacity="0.85">
+    <ellipse cx="210" cy="112" rx="112" ry="46"/>
+  </g>
+  <g fill="#C7D4DF">
+    <circle cx="98"  cy="112" r="6"/>
+    <circle cx="296" cy="82"  r="6"/>
+    <circle cx="265" cy="152" r="6"/>
+    <circle cx="139" cy="147" r="6"/>
+  </g>
+
+  <!-- post-quantum: discrete lattice -->
+  <g fill="#D2912F">
+    <circle cx="110" cy="260" r="5"/><circle cx="158" cy="250" r="5"/><circle cx="206" cy="240" r="5"/><circle cx="254" cy="230" r="5"/><circle cx="302" cy="220" r="5"/>
+    <circle cx="124" cy="304" r="5"/><circle cx="172" cy="294" r="5"/><circle cx="220" cy="284" r="5"/><circle cx="268" cy="274" r="5"/><circle cx="316" cy="264" r="5"/>
+    <circle cx="138" cy="348" r="5"/><circle cx="186" cy="338" r="5"/><circle cx="234" cy="328" r="5"/><circle cx="282" cy="318" r="5"/><circle cx="330" cy="308" r="5"/>
+  </g>
+  <g fill="none" stroke="#D2912F" stroke-width="1" opacity="0.3">
+    <path d="M110 260 L302 220 M124 304 L316 264 M138 348 L330 308"/>
+    <path d="M110 260 L138 348 M158 250 L186 338 M206 240 L234 328 M254 230 L282 318 M302 220 L330 308"/>
+  </g>
+
+  <!-- both components converge on the combiner -->
+  <g fill="none" stroke-width="2.5" stroke-linecap="round">
+    <path id="pqh-in-1" d="M328 118 C 430 132, 470 160, 548 190" stroke="#C7D4DF" opacity="0.3"/>
+    <path id="pqh-in-2" d="M348 292 C 444 282, 482 246, 550 212" stroke="#D2912F" opacity="0.3"/>
+    <path d="M328 118 C 430 132, 470 160, 548 190" stroke="#C7D4DF" class="pqh-flow"/>
+    <path d="M348 292 C 444 282, 482 246, 550 212" stroke="#D2912F" class="pqh-flow pqh-flow-2"/>
+  </g>
+
+  <!-- combiner -->
+  <g fill="none" stroke="#D2912F" stroke-width="3">
+    <circle cx="600" cy="200" r="42"/>
+    <path d="M578 200 H622 M600 178 V222" stroke-linecap="round"/>
+  </g>
+
+  <!-- one key stream out -->
+  <path d="M646 200 H772" fill="none" stroke="#C7D4DF" stroke-width="2.5" opacity="0.5" stroke-linecap="round"/>
+  <g fill="#D2912F">
+    <rect x="784"  y="186" width="26" height="28" rx="3" opacity="0.95"/>
+    <rect x="818"  y="186" width="26" height="28" rx="3" opacity="0.8"/>
+    <rect x="852"  y="186" width="26" height="28" rx="3" opacity="0.95"/>
+    <rect x="886"  y="186" width="26" height="28" rx="3" opacity="0.7"/>
+    <rect x="920"  y="186" width="26" height="28" rx="3" opacity="0.9"/>
+    <rect x="954"  y="186" width="26" height="28" rx="3" opacity="0.75"/>
+    <rect x="988"  y="186" width="26" height="28" rx="3" opacity="0.95"/>
+    <rect x="1022" y="186" width="26" height="28" rx="3" opacity="0.8"/>
+  </g>
+  <path d="M1060 200 H1096" fill="none" stroke="#C7D4DF" stroke-width="2.5" opacity="0.5" stroke-linecap="round"/>
+  <circle cx="1108" cy="200" r="8" fill="#C7D4DF"/>
+
+  <rect width="1200" height="400" fill="url(#pqh-fade)"/>
+</svg>

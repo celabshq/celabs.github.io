@@ -1,0 +1,15 @@
+{
+  "name": "hpke-rs-wasm",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "hpke_rs_wasm_bg.wasm",
+    "hpke_rs_wasm.js",
+    "hpke_rs_wasm.d.ts"
+  ],
+  "main": "hpke_rs_wasm.js",
+  "types": "hpke_rs_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
