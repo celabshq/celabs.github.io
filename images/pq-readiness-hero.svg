@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A scan beam sweeps across a row of system nodes, marking each one either cleared with a checkmark or flagged with a warning — a post-quantum readiness check.">
+  <defs>
+    <radialGradient id="prc-fade" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="#0E2436" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0E2436" stop-opacity="0.6"/>
+    </radialGradient>
+    <linearGradient id="prc-beam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D2912F" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#D2912F" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#D2912F" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      .prc-beam {
+        animation: prc-sweep 5s ease-in-out infinite;
+      }
+      @keyframes prc-sweep {
+        0%   { transform: translateX(-40px); }
+        50%  { transform: translateX(1080px); }
+        100% { transform: translateX(-40px); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .prc-beam { animation: none; transform: translateX(520px); }
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="400" fill="#0E2436"/>
+
+  <!-- baseline the nodes sit on -->
+  <line x1="140" y1="200" x2="1060" y2="200" stroke="#2C4658" stroke-width="2"/>
+
+  <!-- system nodes: a mix of cleared (teal check) and flagged (amber warning) -->
+  <g font-family="sans-serif">
+    <!-- node 1: cleared -->
+    <circle cx="220" cy="200" r="34" fill="none" stroke="#C7D4DF" stroke-width="2.5"/>
+    <path d="M204 200 L216 213 L238 187" fill="none" stroke="#16607A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- node 2: flagged -->
+    <circle cx="410" cy="200" r="34" fill="none" stroke="#C7D4DF" stroke-width="2.5"/>
+    <path d="M410 182 L410 205" stroke="#D2912F" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="410" cy="217" r="3.2" fill="#D2912F"/>
+
+    <!-- node 3: cleared -->
+    <circle cx="600" cy="200" r="34" fill="none" stroke="#C7D4DF" stroke-width="2.5"/>
+    <path d="M584 200 L596 213 L618 187" fill="none" stroke="#16607A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- node 4: flagged -->
+    <circle cx="790" cy="200" r="34" fill="none" stroke="#C7D4DF" stroke-width="2.5"/>
+    <path d="M790 182 L790 205" stroke="#D2912F" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="790" cy="217" r="3.2" fill="#D2912F"/>
+
+    <!-- node 5: flagged -->
+    <circle cx="980" cy="200" r="34" fill="none" stroke="#C7D4DF" stroke-width="2.5"/>
+    <path d="M980 182 L980 205" stroke="#D2912F" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="980" cy="217" r="3.2" fill="#D2912F"/>
+  </g>
+
+  <!-- sweeping scan beam -->
+  <rect class="prc-beam" x="-40" y="0" width="80" height="400" fill="url(#prc-beam)"/>
+
+  <rect width="1200" height="400" fill="url(#prc-fade)"/>
+</svg>
