@@ -3,14 +3,9 @@
     <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L9,4.5 L0,9 Z" fill="#D2912F"/>
     </marker>
-    <radialGradient id="fade" cx="50%" cy="50%" r="62%">
-      <stop offset="62%" stop-color="#0E2436" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0E2436" stop-opacity="0.55"/>
-    </radialGradient>
   </defs>
 
-  <!-- ink canvas -->
-  <rect width="800" height="600" fill="#0E2436"/>
+  <!-- no canvas: drawn straight onto the page, like a figure in a paper -->
 
   <!--
     The lattice is L = { m*b1 + n*b2 }, origin (94,530), b1 = (82,-26), b2 = (30,-76).
@@ -67,7 +62,7 @@
             </polygon>
 
             <!-- lattice points: fixed at their sites, the whole field breathing -->
-            <g fill="#7E94A6" opacity="0.9">
+            <g fill="#51677A" opacity="0.9">
               <animate attributeName="opacity" values="0.62;1;0.62" dur="11s" repeatCount="indefinite"/>
               <circle cx="206" cy="428" r="3.4"/><circle cx="236" cy="352" r="3.4"/><circle cx="266" cy="276" r="3.4"/>
               <circle cx="288" cy="402" r="3.4"/><circle cx="318" cy="326" r="3.4"/><circle cx="348" cy="250" r="3.4"/>
@@ -84,7 +79,7 @@
 
             <!-- the same lattice points, very subtly warmed to trace a (sheared) CE.
                  Counterphase with the field above, so the CE surfaces and recedes. -->
-            <g fill="#A98E63" opacity="0.85">
+            <g fill="#9E631A" opacity="0.85">
               <animate attributeName="opacity" values="1;0.55;1" dur="11s" begin="-3.7s" repeatCount="indefinite"/>
               <!-- C: top bar, left side, bottom bar (origin completes the lower-left corner) -->
               <circle cx="214" cy="226" r="3.4"/><circle cx="296" cy="200" r="3.4"/><circle cx="378" cy="174" r="3.4"/>
@@ -107,7 +102,7 @@
               around the cell at (400,300); nearest corner cycles C,C,D,D,A,A,B,B.
             -->
             <g id="cvp">
-              <line x1="493" y1="227" x2="512" y2="198" stroke="#7E94A6" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.7">
+              <line x1="493" y1="227" x2="512" y2="198" stroke="#51677A" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.7">
                 <animate attributeName="x1" dur="16s" repeatCount="indefinite" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" values="493;481;454;429;419;431;458;483;493"/>
                 <animate attributeName="y1" dur="16s" repeatCount="indefinite" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" values="227;215;224;247;271;283;274;251;227"/>
                 <animate attributeName="x2" dur="16s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" values="512;512;430;430;400;400;482;482;512"/>
@@ -118,7 +113,7 @@
                 <animate attributeName="cy" dur="16s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" values="198;198;224;224;300;300;274;274;198"/>
                 <animate attributeName="r" values="7;9.5;7" dur="4s" repeatCount="indefinite"/>
               </circle>
-              <circle cx="493" cy="227" r="2.6" fill="#EAF0F4">
+              <circle cx="493" cy="227" r="2.6" fill="#0E2436">
                 <animate attributeName="cx" dur="16s" repeatCount="indefinite" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" values="493;481;454;429;419;431;458;483;493"/>
                 <animate attributeName="cy" dur="16s" repeatCount="indefinite" keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1" values="227;215;224;247;271;283;274;251;227"/>
               </circle>
@@ -165,10 +160,4 @@
       </g>
     </g>
   </g>
-
-  <!-- soft vignette so the cluster reads as a contained motif -->
-  <rect width="800" height="600" fill="url(#fade)"/>
-
-  <!-- amber baseline bar, echoing the CE seal -->
-  <rect x="0" y="588" width="800" height="12" fill="#D2912F"/>
 </svg>

@@ -1,32 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A microcontroller running libcrux-iot connects to cloud services over post-quantum (ML-KEM) channels">
   <defs>
-    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#b45309;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#c2410c;stop-opacity:1" />
-    </linearGradient>
-    <filter id="glow2">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L12,6 L0,12 Z" fill="#0E2436"/></marker>
+    <marker id="aa" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L12,6 L0,12 Z" fill="#D2912F"/></marker>
   </defs>
-
-  <rect width="1200" height="400" fill="url(#grad2)"/>
-
-  <g filter="url(#glow2)">
-    <path d="M 600 60 L 750 120 L 750 240 Q 750 320 600 360 Q 450 320 450 240 L 450 120 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
-
-    <path d="M 550 150 Q 560 140 570 150 T 590 150 T 610 150 T 630 150 T 650 150" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
-    <path d="M 520 200 Q 530 190 540 200 T 560 200 T 580 200 T 600 200 T 620 200 T 640 200 T 660 200 T 680 200" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
-    <path d="M 480 250 Q 490 240 500 250 T 520 250 T 540 250 T 560 250 T 580 250 T 600 250 T 620 250 T 640 250 T 660 250 T 680 250 T 700 250 T 720 250" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
-  </g>
-
-  <circle cx="200" cy="100" r="10" fill="rgba(255,255,255,0.3)" filter="url(#glow2)"/>
-  <circle cx="1000" cy="120" r="10" fill="rgba(255,255,255,0.3)" filter="url(#glow2)"/>
-  <circle cx="150" cy="300" r="10" fill="rgba(255,255,255,0.3)" filter="url(#glow2)"/>
-  <circle cx="1050" cy="320" r="10" fill="rgba(255,255,255,0.3)" filter="url(#glow2)"/>
-
+  <rect x="170" y="90" width="220" height="220" rx="2" fill="none" stroke="#0E2436" stroke-width="3"/>
+  <line x1="200" y1="68" x2="200" y2="90" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="200" y1="310" x2="200" y2="332" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="148" y1="120" x2="170" y2="120" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="390" y1="120" x2="412" y2="120" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="232" y1="68" x2="232" y2="90" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="232" y1="310" x2="232" y2="332" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="148" y1="152" x2="170" y2="152" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="390" y1="152" x2="412" y2="152" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="264" y1="68" x2="264" y2="90" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="264" y1="310" x2="264" y2="332" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="148" y1="184" x2="170" y2="184" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="390" y1="184" x2="412" y2="184" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="296" y1="68" x2="296" y2="90" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="296" y1="310" x2="296" y2="332" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="148" y1="216" x2="170" y2="216" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="390" y1="216" x2="412" y2="216" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="328" y1="68" x2="328" y2="90" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="328" y1="310" x2="328" y2="332" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="148" y1="248" x2="170" y2="248" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="390" y1="248" x2="412" y2="248" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="360" y1="68" x2="360" y2="90" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="360" y1="310" x2="360" y2="332" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="148" y1="280" x2="170" y2="280" stroke="#0E2436" stroke-width="2.5" />
+  <line x1="390" y1="280" x2="412" y2="280" stroke="#0E2436" stroke-width="2.5" />
+  <rect x="220" y="140" width="120" height="120" rx="2" fill="none" stroke="#51677A" stroke-width="2"/>
+  <text x="280.0" y="380" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="20" font-weight="400" fill="#51677A" text-anchor="middle">MCU · libcrux-iot</text>
+  <path d="M412,152 C612,152 690,100 890,100" fill="none" stroke="#51677A" stroke-width="2" stroke-dasharray="6 7"/>
+  <circle cx="920" cy="100" r="24" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <text x="964" y="108" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="20" font-weight="400" fill="#51677A" text-anchor="start">cloud</text>
+  <path d="M412,216 C612,216 690,200 890,200" fill="none" stroke="#D2912F" stroke-width="3" />
+  <circle cx="920" cy="200" r="24" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <text x="964" y="208" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="20" font-weight="400" fill="#51677A" text-anchor="start">cloud</text>
+  <path d="M412,280 C612,280 690,300 890,300" fill="none" stroke="#51677A" stroke-width="2" stroke-dasharray="6 7"/>
+  <circle cx="920" cy="300" r="24" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <text x="964" y="308" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="20" font-weight="400" fill="#51677A" text-anchor="start">cloud</text>
+  <text x="660" y="184" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="22" font-weight="400" fill="#9E631A" text-anchor="middle">ML-KEM</text>
 </svg>

@@ -1,28 +1,105 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A faint diagonal grid on a dark field, with a single amber point — a generic security engineering motif.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="A two-dimensional point lattice, a few points highlighted">
   <defs>
-    <radialGradient id="def-fade" cx="50%" cy="50%" r="70%">
-      <stop offset="55%" stop-color="#0E2436" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0E2436" stop-opacity="0.65"/>
-    </radialGradient>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L12,6 L0,12 Z" fill="#0E2436"/></marker>
+    <marker id="aa" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L12,6 L0,12 Z" fill="#D2912F"/></marker>
   </defs>
-
-  <rect width="1200" height="400" fill="#0E2436"/>
-
-  <g stroke="#2C4658" stroke-width="1" opacity="0.7">
-    <path d="M-100 460 L500 -60"/>
-    <path d="M-20 460 L580 -60"/>
-    <path d="M60 460 L660 -60"/>
-    <path d="M140 460 L740 -60"/>
-    <path d="M220 460 L820 -60"/>
-    <path d="M300 460 L900 -60"/>
-    <path d="M380 460 L980 -60"/>
-    <path d="M460 460 L1060 -60"/>
-    <path d="M540 460 L1140 -60"/>
-    <path d="M620 460 L1220 -60"/>
-    <path d="M700 460 L1300 -60"/>
+  <g fill="#51677A">
+    <circle cx="50" cy="78" r="4"/>
+    <circle cx="42" cy="250" r="4"/>
+    <circle cx="68" cy="188" r="4"/>
+    <circle cx="94" cy="126" r="4"/>
+    <circle cx="120" cy="64" r="4"/>
+    <circle cx="60" cy="360" r="4"/>
+    <circle cx="86" cy="298" r="4"/>
+    <circle cx="112" cy="236" r="4"/>
+    <circle cx="138" cy="174" r="4"/>
+    <circle cx="164" cy="112" r="4"/>
+    <circle cx="190" cy="50" r="4"/>
+    <circle cx="130" cy="346" r="4"/>
+    <circle cx="156" cy="284" r="4"/>
+    <circle cx="182" cy="222" r="4"/>
+    <circle cx="208" cy="160" r="4"/>
+    <circle cx="234" cy="98" r="4"/>
+    <circle cx="200" cy="332" r="4"/>
+    <circle cx="226" cy="270" r="4"/>
+    <circle cx="252" cy="208" r="4"/>
+    <circle cx="278" cy="146" r="4"/>
+    <circle cx="304" cy="84" r="4"/>
+    <circle cx="270" cy="318" r="4"/>
+    <circle cx="296" cy="256" r="4"/>
+    <circle cx="322" cy="194" r="4"/>
+    <circle cx="348" cy="132" r="4"/>
+    <circle cx="374" cy="70" r="4"/>
+    <circle cx="314" cy="366" r="4"/>
+    <circle cx="340" cy="304" r="4"/>
+    <circle cx="366" cy="242" r="4"/>
+    <circle cx="392" cy="180" r="4"/>
+    <circle cx="418" cy="118" r="4"/>
+    <circle cx="444" cy="56" r="4"/>
+    <circle cx="384" cy="352" r="4"/>
+    <circle cx="410" cy="290" r="4"/>
+    <circle cx="436" cy="228" r="4"/>
+    <circle cx="462" cy="166" r="4"/>
+    <circle cx="488" cy="104" r="4"/>
+    <circle cx="514" cy="42" r="4"/>
+    <circle cx="454" cy="338" r="4"/>
+    <circle cx="480" cy="276" r="4"/>
+    <circle cx="506" cy="214" r="4"/>
+    <circle cx="532" cy="152" r="4"/>
+    <circle cx="558" cy="90" r="4"/>
+    <circle cx="524" cy="324" r="4"/>
+    <circle cx="550" cy="262" r="4"/>
+    <circle cx="576" cy="200" r="4"/>
+    <circle cx="602" cy="138" r="4"/>
+    <circle cx="628" cy="76" r="4"/>
+    <circle cx="594" cy="310" r="4"/>
+    <circle cx="620" cy="248" r="4"/>
+    <circle cx="646" cy="186" r="4"/>
+    <circle cx="672" cy="124" r="4"/>
+    <circle cx="698" cy="62" r="4"/>
+    <circle cx="638" cy="358" r="4"/>
+    <circle cx="664" cy="296" r="4"/>
+    <circle cx="690" cy="234" r="4"/>
+    <circle cx="716" cy="172" r="4"/>
+    <circle cx="742" cy="110" r="4"/>
+    <circle cx="768" cy="48" r="4"/>
+    <circle cx="708" cy="344" r="4"/>
+    <circle cx="734" cy="282" r="4"/>
+    <circle cx="760" cy="220" r="4"/>
+    <circle cx="786" cy="158" r="4"/>
+    <circle cx="812" cy="96" r="4"/>
+    <circle cx="778" cy="330" r="4"/>
+    <circle cx="804" cy="268" r="4"/>
+    <circle cx="830" cy="206" r="4"/>
+    <circle cx="856" cy="144" r="4"/>
+    <circle cx="882" cy="82" r="4"/>
+    <circle cx="848" cy="316" r="4"/>
+    <circle cx="874" cy="254" r="4"/>
+    <circle cx="900" cy="192" r="4"/>
+    <circle cx="926" cy="130" r="4"/>
+    <circle cx="952" cy="68" r="4"/>
+    <circle cx="892" cy="364" r="4"/>
+    <circle cx="918" cy="302" r="4"/>
+    <circle cx="944" cy="240" r="4"/>
+    <circle cx="970" cy="178" r="4"/>
+    <circle cx="996" cy="116" r="4"/>
+    <circle cx="1022" cy="54" r="4"/>
+    <circle cx="962" cy="350" r="4"/>
+    <circle cx="988" cy="288" r="4"/>
+    <circle cx="1014" cy="226" r="4"/>
+    <circle cx="1040" cy="164" r="4"/>
+    <circle cx="1066" cy="102" r="4"/>
+    <circle cx="1032" cy="336" r="4"/>
+    <circle cx="1058" cy="274" r="4"/>
+    <circle cx="1084" cy="212" r="4"/>
+    <circle cx="1110" cy="150" r="4"/>
+    <circle cx="1136" cy="88" r="4"/>
+    <circle cx="1102" cy="322" r="4"/>
+    <circle cx="1128" cy="260" r="4"/>
+    <circle cx="1154" cy="198" r="4"/>
   </g>
-
-  <circle cx="600" cy="200" r="5" fill="#D2912F"/>
-
-  <rect width="1200" height="400" fill="url(#def-fade)"/>
+  <circle cx="506" cy="214" r="6" fill="#D2912F"/>
+  <circle cx="576" cy="200" r="6" fill="#D2912F"/>
+  <circle cx="602" cy="138" r="6" fill="#D2912F"/>
+  <circle cx="646" cy="186" r="6" fill="#D2912F"/>
 </svg>
