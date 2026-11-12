@@ -1,0 +1,78 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>From Design to Code: Formally Analyzing Signal's Post-Quantum Ratchet — CE Labs</title><meta name=description content="Formal analysis of Signal's Sparse Post-Quantum Ratchet, from the protocol design to machine-checked proofs on its Rust implementation. Paper at ACM CCS 2026."><link rel=preload href=/fonts/source-serif-4-latin-opsz-normal.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/source-sans-3-latin-wght-normal.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=/css/main.ba12d6b0424a21389d5662ea2537511978783c90d51763d7abc7b38d575f865d.css integrity="sha256-uhLWsEJKITidVmLqJTdRGXh4PJDVF2PXq8ezjVdfhl0="><link rel=icon href=/favicon.svg type=image/svg+xml><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/apple-touch-icon.png><meta name=theme-color content="#FDFDFB"><link rel=canonical href=https://celabs.eu/blog/spqr-ccs26/><meta property="og:title" content="From Design to Code: Formally Analyzing Signal's Post-Quantum Ratchet — CE Labs"><meta property="og:type" content="article"><meta property="og:site_name" content="CE Labs"><meta property="og:url" content="https://celabs.eu/blog/spqr-ccs26/"><meta property="og:description" content="Formal analysis of Signal's Sparse Post-Quantum Ratchet, from the protocol design to machine-checked proofs on its Rust implementation. Paper at ACM CCS 2026."><meta property="og:image" content="https://celabs.eu/social-cards/spqr-ccs26.png"><meta property="article:published_time" content="2026-11-12T00:00:00Z"><meta property="article:author" content="Franziskus Kiefer"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Social card: From Design to Code — Formally Analyzing Signal's Post-Quantum Ratchet"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="From Design to Code: Formally Analyzing Signal's Post-Quantum Ratchet — CE Labs"><meta name=twitter:description content="Formal analysis of Signal's Sparse Post-Quantum Ratchet, from the protocol design to machine-checked proofs on its Rust implementation. Paper at ACM CCS 2026."><meta name=twitter:image content="https://celabs.eu/social-cards/spqr-ccs26.png"><meta name=twitter:image:alt content="Social card: From Design to Code — Formally Analyzing Signal's Post-Quantum Ratchet"><script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"CE Labs","url":"https:\/\/celabs.eu\/","logo":"https:\/\/celabs.eu\/apple-touch-icon.png","description":"Secure systems engineering, verified all the way down to the cryptography.","sameAs":["https://cryspen.com","https://github.com/celabshq"]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"WebSite","name":"CE Labs","url":"https:\/\/celabs.eu\/"}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","headline":"From Design to Code: Formally Analyzing Signal's Post-Quantum Ratchet","datePublished":"2026-11-12T00:00:00Z","dateModified":"2026-11-12T00:00:00Z","author":{"@type":"Person","name":"Franziskus Kiefer"},"description":"Formal analysis of Signal's Sparse Post-Quantum Ratchet, from the protocol design to machine-checked proofs on its Rust implementation. Paper at ACM CCS 2026.","image":"https://celabs.eu/social-cards/spqr-ccs26.png","publisher":{"@type":"Organization","name":"CE Labs","logo":{"@type":"ImageObject","url":"https:\/\/celabs.eu\/apple-touch-icon.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/celabs.eu\/blog\/spqr-ccs26\/"}}</script></head><body><header class=nav><div class="wrap nav__row"><a href=/ class=ce-seal-lockup aria-label="CE Labs home"><span class=ce-seal><span>CE</span></span>
+<span class=ce-seal__text><span class=ce-seal__name>CE Labs</span>
+<span class=ce-seal__sub>Cryptography Engineering</span>
+</span></a><button class=nav__toggle type=button aria-label="Toggle menu" aria-expanded=false aria-controls=nav-menu>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span></button><div class=nav__menu id=nav-menu><nav class=nav__links><a href=/services/>Services</a>
+<a href=/blog/>Blog</a>
+<a href=/publications/>Publications</a>
+<a href=/projects/>Projects</a>
+<a href=/about/>About</a></nav><a href=/contact/ class="btn btn--solid nav__cta">Contact</a></div></div></header><script>(function(){var e=document.querySelector("header.nav"),t=e&&e.querySelector(".nav__toggle");if(!t)return;t.addEventListener("click",function(){var n=e.classList.toggle("is-open");t.setAttribute("aria-expanded",n?"true":"false")}),e.querySelectorAll(".nav__menu a").forEach(function(n){n.addEventListener("click",function(){e.classList.remove("is-open"),t.setAttribute("aria-expanded","false")})})})()</script><main><article><header class=article__head><div class=wrap><div class=article__col><span class=eyebrow>Post-Quantum</span><h1>From Design to Code: Formally Analyzing Signal's Post-Quantum Ratchet</h1><p class=lede>Formal analysis of Signal's Sparse Post-Quantum Ratchet, from the protocol design to machine-checked proofs on its Rust implementation. Paper at ACM CCS 2026.</p><div class=meta><span>2026·11·12</span>
+<span>3 min read</span></div></div></div></header><div class=wrap><div class=prose><p>In 2025, Signal deployed the <a href=https://signal.org/blog/spqr/ target=_blank rel="noopener noreferrer">Sparse Post-Quantum Ratchet (SPQR)</a>
+.
+It runs alongside the classic Double Ratchet and is designed so that
+conversations keep their forward secrecy and post-compromise security unless
+<em>both</em> elliptic-curve Diffie-Hellman <em>and</em> ML-KEM are broken.
+At <a href=https://www.sigsac.org/ccs/CCS2026/index.html target=_blank rel="noopener noreferrer">ACM CCS 2026</a>
+in The Hague this November, Rolfe Schmidt from Signal will
+present our joint paper with the formal specification and security analysis
+of SPQR.
+The analysis covers not only the design but also the Rust code that ships in
+Signal.</p><p>The paper, <em>A Formal Analysis of Signal&rsquo;s Sparse Post-Quantum Ratchet Protocol
+and Its Implementation</em>, is joint work by Karthikeyan Bhargavan and Maxime Buyse
+(<a href=https://pereq.eu/ target=_blank rel="noopener noreferrer">pereq</a>
+, formerly Cryspen), Graeme Connell and Rolfe Schmidt (Signal), and
+Franziskus Kiefer (CE Labs).
+SPQR uses the formally verified ML-KEM implementation from <a href=https://github.com/celabshq/libcrux target=_blank rel="noopener noreferrer">libcrux</a>
+.</p><h2 id=the-challenge>The Challenge</h2><p>Post-quantum KEMs are not drop-in replacements for Diffie-Hellman.
+They don&rsquo;t support non-interactive key exchange, and their messages are more
+than an order of magnitude larger.
+While the Double Ratchet can attach a fresh public key to every message, SPQR
+cannot: it has to split key-exchange messages into chunks, use erasure codes so
+that lost or out-of-order messages don&rsquo;t stall key agreement, and produce new
+keys only after receiving enough chunks.
+The result is a more complex state machine with subtler security guarantees.
+When exactly does a compromised device heal? Which epochs does a given
+compromise expose?</p><h2 id=verification-driven-design>Verification-Driven Design</h2><p>At the core of SPQR is <a href=https://signal.org/docs/specifications/mlkembraid/ target=_blank rel="noopener noreferrer">ML-KEM Braid</a>
+, a <a href=https://eprint.iacr.org/2025/2267 target=_blank rel="noopener noreferrer">sparse continuous key agreement (SCKA)</a>
+protocol:
+the two parties take turns, one streaming an ML-KEM encapsulation key and the
+other streaming back a ciphertext, and each completed round yields a fresh
+shared secret for a new epoch.</p><p>Rather than analyzing a finished protocol, the analysis was part of the design
+cycle from the start.
+ML-KEM Braid and several alternative candidates were modeled in <a href=https://bblanchet.gitlabpages.inria.fr/proverif/ target=_blank rel="noopener noreferrer">ProVerif</a>
+to guide
+the design.
+The models made it possible to compare the candidates&rsquo; forward-secrecy and
+post-compromise-security guarantees under dynamic compromise.
+The resulting vulnerability sets, combined with simulations of messaging
+behavior, helped Signal choose between, for example, a faster ad-hoc
+construction and one built on standardized IND-CCA ML-KEM.</p><h2 id=verification-constrained-development>Verification-Constrained Development</h2><p>A design model doesn&rsquo;t help much if the code drifts away from it.
+Using the <a href=https://github.com/pereq-dev/hax target=_blank rel="noopener noreferrer">hax</a>
+toolchain, parts of the <code>spqr</code> crate were proven in <a href=https://fstar-lang.org/ target=_blank rel="noopener noreferrer">F*</a>
+to be
+free of runtime errors such as panics, integer overflows, and out-of-bounds
+accesses, with functional correctness proofs for subtle code such as the
+Galois-field arithmetic behind the erasure codes.
+ProVerif models were also extracted directly from the Rust code and re-verified
+against the same security queries as the design model.</p><p>Along the way, verification caught missing input checks at function boundaries
+and, in an early candidate, a real state-machine bug where the epoch counter
+advanced too early.
+The proofs live in Signal&rsquo;s public
+<a href=https://github.com/signalapp/SparsePostQuantumRatchet target=_blank rel="noopener noreferrer">SparsePostQuantumRatchet repository</a>
+.
+The proofs run on CI, just like any other test.</p><h2 id=whats-still-open>What&rsquo;s Still Open</h2><p>This is a first step, and a lot of work remains.
+There is no computational proof yet: a reduction showing that a concrete SCKA
+such as ML-KEM Braid is secure under the KEM&rsquo;s assumptions is still open.
+On the implementation side, only parts of the <code>spqr</code> crate are verified.
+Extending the proofs to the rest of the code, and connecting the design-level
+and code-level guarantees more tightly, is ongoing work.</p><hr><p>Bringing post-quantum security to your own protocol? We help with protocol
+analysis and high-assurance post-quantum implementations;
+<a href=/contact/>get in touch</a>
+.</p></div></div></article></main><footer class=foot><div class=wrap><div class=foot__grid><div class="foot__brand on-ink"><span class=ce-lockup><span class=ce-lockup__word>CE<span class=ce-dot></span>Labs</span>
+<span class=ce-lockup__rule><span class=ce-bar></span><span class=ce-sub>Cryptography Engineering</span></span></span><p>High-assurance security engineering — built secure from the cryptography up, for organisations that cannot afford to be wrong.</p></div><div><h5>Tools & Services</h5><ul><li><a href=https://pq.celabs.eu/ target=_blank rel=noopener>PQ Readiness Check</a></li></ul></div><div><h5>Company</h5><ul><li><a href=/about/>About</a></li><li><a href=/about/#team>Team</a></li><li><a href=/careers/>Careers</a></li><li><a href=/imprint/>Imprint</a></li></ul></div></div><div class=foot__bottom><span>© 2026 CE Labs</span>
+<span><a class=foot__spinoff href=https://cryspen.com target=_blank rel=noopener><span class=foot__spinoff-label>A</span>
+<img src=/images/cryspen-logo.svg alt=Cryspen loading=lazy>
+<span class=foot__spinoff-label>spin-off.</span>
+</a></span><span class=foot__mark>secure(system) ⊨ spec</span></div></div></footer></body></html>

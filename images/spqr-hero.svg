@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="SPQR sends a large ML-KEM key in erasure-coded chunks across messages; a lost message does no harm, and the receiver derives a new epoch key">
+  <defs>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L12,6 L0,12 Z" fill="#0E2436"/></marker>
+    <marker id="aa" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L12,6 L0,12 Z" fill="#D2912F"/></marker>
+  </defs>
+  <rect x="90" y="150" width="44" height="70" rx="2" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <rect x="134" y="150" width="44" height="70" rx="2" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <rect x="178" y="150" width="44" height="70" rx="2" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <rect x="222" y="150" width="44" height="70" rx="2" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <rect x="266" y="150" width="44" height="70" rx="2" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <rect x="310" y="150" width="44" height="70" rx="2" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <text x="222.0" y="262" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="20" font-weight="400" fill="#51677A" text-anchor="middle">ML-KEM key</text>
+  <line x1="400" y1="185" x2="860" y2="185" stroke="#51677A" stroke-width="2" stroke-dasharray="5 6" marker-end="url(#a)"/>
+  <rect x="420" y="160" width="44" height="50" rx="2" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <rect x="434" y="174" width="16" height="22" fill="#D2912F"/>
+  <rect x="490" y="160" width="44" height="50" rx="2" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <rect x="504" y="174" width="16" height="22" fill="#D2912F"/>
+  <rect x="560" y="160" width="44" height="50" rx="2" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <rect x="574" y="174" width="16" height="22" fill="#D2912F"/>
+  <rect x="630" y="160" width="44" height="50" rx="2" fill="none" stroke="#D9DCDF" stroke-width="2.5"/>
+  <rect x="700" y="160" width="44" height="50" rx="2" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <rect x="714" y="174" width="16" height="22" fill="#D2912F"/>
+  <rect x="770" y="160" width="44" height="50" rx="2" fill="none" stroke="#0E2436" stroke-width="2.5"/>
+  <rect x="784" y="174" width="16" height="22" fill="#D2912F"/>
+  <text x="640" y="262" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="20" font-weight="400" fill="#9E631A" text-anchor="middle">chunks + erasure code</text>
+  <line x1="880" y1="185" x2="940" y2="185" stroke="#D2912F" stroke-width="3" marker-end="url(#aa)"/>
+  <rect x="950" y="140" width="170" height="90" rx="2" fill="none" stroke="#0E2436" stroke-width="3"/>
+  <text x="1035" y="194" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="22" font-weight="400" fill="#0E2436" text-anchor="middle">epoch n+1</text>
+</svg>

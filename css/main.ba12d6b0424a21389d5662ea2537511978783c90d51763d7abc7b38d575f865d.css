@@ -1,0 +1,1915 @@
+/* ============================================================
+   CE Labs — theme stylesheet (single source, Hugo-pipeline ready)
+   Palette: Ink & Amber on white · Type: Source Serif 4 / Source Sans 3 / JetBrains Mono
+   ============================================================ */
+
+/* ---------- fonts ---------- */
+/* Self-hosted (no Google Fonts request): latin + latin-ext subsets from Fontsource,
+   files in themes/celabs/static/fonts/ (OFL). Serif carries the opsz axis. */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url(/fonts/source-serif-4-latin-ext-opsz-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url(/fonts/source-serif-4-latin-opsz-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url(/fonts/source-serif-4-latin-ext-opsz-italic.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url(/fonts/source-serif-4-latin-opsz-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url(/fonts/source-sans-3-latin-ext-wght-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url(/fonts/source-sans-3-latin-wght-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url(/fonts/jetbrains-mono-latin-ext-wght-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url(/fonts/jetbrains-mono-latin-wght-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/fonts/ibm-plex-sans-latin-ext-600-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/fonts/ibm-plex-sans-latin-600-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/fonts/ibm-plex-mono-latin-ext-500-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/fonts/ibm-plex-mono-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/fonts/ibm-plex-mono-latin-ext-700-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/fonts/ibm-plex-mono-latin-700-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+:root {
+  --ce-ink: #0E2436;
+  --ce-ink-2: #14324A;
+  --ce-ink-soft: #2A3F52;   /* dark UI text on paper (nav, lede) */
+  --ce-prose: #24364a;      /* prose body text on paper */
+  --ce-teal: #16607A;
+  --ce-amber: #D2912F;
+  --ce-amber-hi: #e0a043;   /* amber button hover */
+  --ce-ochre: #9E631A;
+  --ce-slate: #51677A;
+  --ce-paper: #FDFDFB;
+  --ce-paper-2: #F4F5F4;
+  --ce-line: #D9DCDF;
+  --ce-danger: #A5331F;
+  --ce-on-ink: #C7D4DF;     /* primary text on ink/dark backgrounds */
+  --ce-on-ink-dim: #A9BACA; /* secondary text on ink */
+  --ce-on-ink-faint: #8DA0B2; /* faint text/sub-labels on ink */
+  --ce-serif: 'Source Serif 4', Georgia, serif;
+  --ce-sans: 'Source Sans 3', system-ui, sans-serif;
+  --ce-mono: 'JetBrains Mono', ui-monospace, monospace;
+  /* the logo lockup keeps its original Plex letterforms */
+  --ce-logo-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --ce-logo-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --ce-r: 2px;
+  --ce-wrap: 1140px;
+  --ce-read: 760px;
+}
+
+/* ---------- reset / base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ce-paper);
+  color: var(--ce-ink);
+  font-family: var(--ce-sans);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ce-serif);
+}
+
+.wrap {
+  max-width: var(--ce-wrap);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.eyebrow {
+  font-family: var(--ce-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ce-ochre);
+}
+
+/* ---------- logo lockups ---------- */
+.ce-lockup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.ce-lockup__word {
+  font-family: var(--ce-logo-sans);
+  font-weight: 600;
+  font-size: 2.6rem;
+  letter-spacing: -0.015em;
+  color: var(--ce-ink);
+  white-space: nowrap;
+}
+
+.ce-lockup__word .ce-dot {
+  display: inline-block;
+  width: 0.2em;
+  height: 0.2em;
+  border-radius: 50%;
+  background: var(--ce-amber);
+  /* centred on the cap height (Plex Sans: 0.698em), and optically between
+     the E and the L, whose left bearing is wider */
+  margin: 0 0.12em 0 0.16em;
+  vertical-align: 0.249em;
+}
+
+.ce-lockup__rule {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-top: 0.7rem;
+}
+
+.ce-lockup__rule .ce-bar {
+  height: 2px;
+  width: 1.6rem;
+  background: var(--ce-amber);
+  display: inline-block;
+}
+
+.ce-lockup__rule .ce-sub {
+  font-family: var(--ce-logo-mono);
+  font-weight: 500;
+  font-size: 0.625rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ce-slate);
+}
+
+.ce-seal {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ce-ink);
+  aspect-ratio: 1/1;
+  width: 2.6rem;
+  overflow: hidden;
+  padding-bottom: 0.24rem;
+}
+
+.ce-seal>span {
+  font-family: var(--ce-logo-mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ce-paper);
+  letter-spacing: 0.02em;
+}
+
+.ce-seal::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.24rem;
+  background: var(--ce-amber);
+}
+
+.ce-seal-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.ce-seal__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+
+.ce-seal__name {
+  font-family: var(--ce-logo-sans);
+  font-weight: 600;
+  font-size: 1.12rem;
+  color: var(--ce-ink);
+  letter-spacing: -0.01em;
+}
+
+.ce-seal__sub {
+  font-family: var(--ce-logo-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ce-slate);
+  margin-top: 0.32rem;
+  white-space: nowrap;
+}
+
+.on-ink .ce-lockup__word,
+.on-ink .ce-seal__name {
+  color: var(--ce-paper);
+}
+
+.on-ink .ce-lockup__rule .ce-sub,
+.on-ink .ce-seal__sub {
+  color: var(--ce-on-ink-faint);
+}
+
+.on-ink .ce-seal {
+  background: var(--ce-paper);
+}
+
+.on-ink .ce-seal>span {
+  color: var(--ce-ink);
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--ce-sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.7em 1.2em;
+  border-radius: var(--ce-r);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .16s ease;
+  white-space: nowrap;
+}
+
+.btn--solid {
+  background: var(--ce-ink);
+  color: var(--ce-paper);
+}
+
+.btn--solid:hover {
+  background: var(--ce-ink-2);
+}
+
+/* a text link with an arrow rather than an outlined box */
+.btn--ghost {
+  background: transparent;
+  color: var(--ce-ink);
+  padding-inline: 0.2em;
+  text-decoration: underline;
+  text-decoration-color: var(--ce-line);
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}
+
+.btn--ghost:hover {
+  color: var(--ce-teal);
+  text-decoration-color: currentColor;
+}
+
+.btn--amber {
+  background: var(--ce-amber);
+  color: var(--ce-ink);
+}
+
+.btn--amber:hover {
+  background: var(--ce-amber-hi);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--ce-ink);
+  border-color: var(--ce-ink);
+}
+
+.btn--outline:hover {
+  color: var(--ce-teal);
+  border-color: var(--ce-teal);
+}
+
+.btn .arw {
+  font-family: var(--ce-mono);
+  transform: translateY(0.5px);
+}
+
+/* ---------- focus visibility (keyboard navigation) ---------- */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav__links a:focus-visible,
+.nav__toggle:focus-visible,
+.team-links a:focus-visible,
+.pub .links a:focus-visible,
+.prose a:focus-visible {
+  outline: 2px solid var(--ce-teal);
+  outline-offset: 2px;
+  border-radius: var(--ce-r);
+}
+
+/* dark sections: use a light ring so it stays visible on ink */
+.on-ink a:focus-visible,
+footer a:focus-visible {
+  outline-color: var(--ce-on-ink);
+}
+
+/* ---------- nav ---------- */
+header.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--ce-paper);
+  border-bottom: 1px solid var(--ce-line);
+}
+
+.nav__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+  gap: 24px;
+}
+
+.nav__menu {
+  display: contents;
+}
+
+/* transparent on desktop: children join the flex row */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: auto; /* push links + Contact to the right, next to each other */
+}
+
+.nav__links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ce-ink-soft);
+  transition: color .14s;
+  white-space: nowrap;
+}
+
+.nav__links a:hover,
+.nav__links a.active {
+  color: var(--ce-teal);
+}
+
+.nav .ce-seal {
+  width: 2.6rem;
+}
+
+.nav__toggle {
+  display: none;
+}
+
+/* ---------- hero ---------- */
+.hero {
+  padding: 86px 0 64px;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero__grid>* {
+  min-width: 0;
+}
+
+/* home only: the lattice figure gets the larger share of the row */
+.hero .hero__grid {
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+}
+
+/* let cells shrink so the wide proof terminal can't blow out the page */
+.hero h1 {
+  font-size: 3.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+  margin: 22px 0 0;
+  max-width: 15ch;
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero__lede {
+  font-size: 1.14rem;
+  color: var(--ce-ink-soft);
+  line-height: 1.62;
+  margin: 24px 0 0;
+  max-width: 50ch;
+}
+
+.hero .cta {
+  display: flex;
+  gap: 14px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.proof,
+.showcase {
+  margin: 0;
+}
+
+/* No auto margins here: they would stop the grid item stretching, shrinking it
+   to the SVG's default intrinsic size (~300px) instead of the column width. */
+.showcase {
+  width: 100%;
+}
+
+/* The lattice only fills ~75% of its canvas (the rest is headroom for its
+   rotation), and the canvas is transparent, so let the home figure spill into
+   the gutter and the right margin; .hero clips any overflow at the viewport. */
+.hero {
+  overflow-x: clip;
+}
+
+.hero .showcase img {
+  width: 124%;
+  max-width: none;
+  margin: -6% -12%;
+}
+
+.showcase img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* fallback so object-fit:cover has a box to fill when the grid cell has no
+     intrinsic height (e.g. the photo column is shorter than the text column) */
+  aspect-ratio: 4 / 3;
+}
+
+/* figure caption under the hero image / proof listing */
+.figcap {
+  font-family: var(--ce-serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--ce-slate);
+  margin-top: 12px;
+}
+
+/* the proof is a code listing in a ruled box, not a dark terminal window */
+.terminal {
+  background: var(--ce-paper-2);
+  padding: 20px 22px;
+  font-family: var(--ce-mono);
+  font-size: 0.82rem;
+  line-height: 1.95;
+  color: var(--ce-ink);
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.terminal .cmd {
+  color: var(--ce-slate);
+}
+
+.terminal .ok {
+  color: var(--ce-teal);
+}
+
+.terminal .amber {
+  color: var(--ce-ochre);
+  font-weight: 600;
+}
+
+.terminal .div {
+  color: var(--ce-line);
+}
+
+.terminal .ct {
+  font-family: var(--ce-mono);
+  font-weight: 400;
+  color: var(--ce-ink);
+}
+
+/* ---------- sections ---------- */
+/* sections are separated by space alone, so it has to be generous */
+section.band {
+  padding: 88px 0;
+}
+
+/* the .sec-head rule already marks the break, so don't stack a full top
+   padding on the previous section's bottom padding above it */
+section.band:has(> .wrap > .sec-head:first-child) {
+  padding-top: 24px;
+}
+
+/* the one change of surface on a page: the closing CTA, full width */
+.band--cta {
+  background: var(--ce-paper-2);
+}
+
+/* let the CTA surface run straight into the footer */
+main:has(.band--cta:last-child) + .foot {
+  margin-top: 0;
+}
+
+/* tighter vertical rhythm for stacked sections (e.g. the About page) */
+.band--intro {
+  padding-top: 30px;
+  padding-bottom: 24px;
+}
+
+.band--tight {
+  padding-top: 24px;
+}
+
+/* nearly flush against a preceding page-head (e.g. list pages) */
+.band--flush {
+  padding-top: 8px;
+}
+
+/* action row under a page-head heading (e.g. 404 "Return home") */
+.page-head__actions {
+  margin-top: 28px;
+}
+
+/* each section opens with a thin rule across the content width, like a
+   section break in a paper; space alone left the home sections running together */
+.sec-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+  padding-top: 22px;
+  border-top: 1px solid var(--ce-line);
+}
+
+.sec-head .l {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sec-head h2 {
+  font-size: 2.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+  max-width: 32ch;
+}
+
+/* ---------- layer stack ---------- */
+/* the layers read as rows of a table, separated by space */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.layer {
+  display: grid;
+  grid-template-columns: 132px 1fr 230px;
+  align-items: baseline;
+  gap: 28px;
+}
+
+.layer__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.layer__no {
+  font-family: var(--ce-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ce-ochre);
+}
+
+.layer__depth {
+  font-family: var(--ce-mono);
+  font-size: 0.72rem;
+  color: var(--ce-slate);
+}
+
+.layer__bar {
+  height: 2px;
+  background: var(--ce-ink);
+  margin-top: 4px;
+}
+
+.layer__body h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 7px;
+  letter-spacing: -0.01em;
+}
+
+.layer__body p {
+  margin: 0;
+  color: var(--ce-slate);
+  font-size: 0.97rem;
+  line-height: 1.6;
+}
+
+/* plain mono keywords separated by middots, no pills */
+.layer__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 0;
+  justify-content: flex-end;
+  font-family: var(--ce-mono);
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.layer__tags span {
+  color: var(--ce-slate);
+  white-space: nowrap;
+}
+
+.layer__tags span+span::before {
+  content: "·";
+  margin: 0 0.5em;
+  color: var(--ce-line);
+}
+
+.layer__tags span.is-tech {
+  color: var(--ce-ink);
+}
+
+/* the foundation layer is set apart by its amber depth bar alone */
+.layer--base .layer__bar {
+  background: var(--ce-amber);
+}
+
+/* ---------- feature grid ---------- */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.feat {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feat .k {
+  font-family: var(--ce-mono);
+  font-size: 0.75rem;
+  color: var(--ce-ochre);
+}
+
+.feat h4 {
+  font-size: 1.16rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.feat p {
+  margin: 0;
+  color: var(--ce-slate);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ---------- research + oss ---------- */
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: stretch;
+}
+
+.two>* {
+  min-width: 0;
+}
+
+/* same grid-blowout guard for the research/open-source panels */
+.panelcard {
+  display: flex;
+  flex-direction: column;
+}
+
+/* push the "see more" link to the bottom so both panels' footers align */
+.panelcard>.seemore {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.panelcard>h3.kicker {
+  font-family: var(--ce-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ce-ochre);
+  margin: 0 0 6px;
+}
+
+.repo {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 0;
+}
+
+.repo:first-of-type {
+  padding-top: 0;
+}
+
+.repo:hover .repo__name {
+  color: var(--ce-teal);
+}
+
+.repo__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.repo__name {
+  font-family: var(--ce-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ce-ink);
+  white-space: nowrap;
+  transition: color .14s;
+}
+
+.repo__lang {
+  font-family: var(--ce-mono);
+  font-size: 0.72rem;
+  color: var(--ce-slate);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.repo__lang::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: var(--ce-amber);
+}
+
+.repo__lang--tool::before {
+  background: var(--ce-teal);
+}
+
+.repo p {
+  margin: 8px 0 0;
+  font-size: 0.88rem;
+  color: var(--ce-slate);
+  line-height: 1.55;
+}
+
+.repo__stars {
+  font-family: var(--ce-mono);
+  font-size: 0.72rem;
+  color: var(--ce-slate);
+  margin-top: 11px;
+}
+
+/* a publication in the home research column: serif title, venue in mono */
+.paper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 0;
+}
+
+.paper:first-of-type {
+  padding-top: 0;
+}
+
+.paper__title {
+  font-family: var(--ce-serif);
+  font-size: 1.06rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ce-ink);
+  transition: color .14s;
+}
+
+.paper:hover .paper__title {
+  color: var(--ce-teal);
+}
+
+.paper__venue {
+  font-family: var(--ce-mono);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--ce-slate);
+}
+
+.seemore {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ce-teal);
+  display: inline-flex;
+  gap: 8px;
+}
+
+.seemore:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- CTA ---------- */
+.cta-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cta-band h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+  max-width: 24ch;
+}
+
+.cta-band p {
+  color: var(--ce-slate);
+  margin: 13px 0 0;
+  max-width: 50ch;
+  font-size: 1.05rem;
+}
+
+/* ============================================================
+   INTERIOR PAGES
+   ============================================================ */
+.page-head {
+  padding: 72px 0 8px;
+}
+
+.page-head .eyebrow {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.page-head h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+  max-width: 20ch;
+  line-height: 1.08;
+}
+
+/* list card grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 32px;
+  padding: 40px 0 8px;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* the post's figure (static/images, drawn by tools/blog-figures), set on the page
+   like a figure: no frame, no tint — the figures are transparent line drawings */
+.post-card__image {
+  margin: 0 0 6px;
+  aspect-ratio: 3 / 1;
+}
+
+.post-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.post-card:hover h3 {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.post-card .meta {
+  display: flex;
+  gap: 14px;
+  font-family: var(--ce-mono);
+  font-size: 0.72rem;
+  color: var(--ce-slate);
+}
+
+.post-card .meta .cat {
+  color: var(--ce-ochre);
+}
+
+.post-card h3 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin: 4px 0 0;
+  line-height: 1.22;
+}
+
+.post-card p {
+  margin: 0;
+  color: var(--ce-slate);
+  font-size: 0.96rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* publications list */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 0 8px;
+}
+
+.pub {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 24px;
+  align-items: baseline;
+  padding: 24px 0;
+  border-top: 1px solid var(--ce-line);
+}
+
+.pub:first-child {
+  border-top: none;
+}
+
+.pub .year {
+  font-family: var(--ce-mono);
+  font-size: 0.8rem;
+  color: var(--ce-ochre);
+}
+
+.pub h3 {
+  font-size: 1.18rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.pub .authors {
+  color: var(--ce-slate);
+  font-size: 0.92rem;
+}
+
+.pub .venue {
+  font-family: var(--ce-mono);
+  font-size: 0.72rem;
+  color: var(--ce-slate);
+  letter-spacing: 0.04em;
+}
+
+.pub .links {
+  display: flex;
+  gap: 12px;
+}
+
+.pub .links a {
+  font-family: var(--ce-mono);
+  font-size: 0.75rem;
+  color: var(--ce-teal);
+  white-space: nowrap;
+}
+
+.pub .links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* project / repo cards (open source list) */
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 32px;
+  padding: 40px 0 8px;
+}
+
+.repo-grid .repo {
+  padding: 0;
+}
+
+/* ---------- single article ---------- */
+.article__head {
+  padding: 64px 0 8px;
+}
+
+.article__col {
+  max-width: var(--ce-read);
+  margin: 0 auto;
+}
+
+.article__col .eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.article__head h1 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.article__head .meta {
+  display: flex;
+  gap: 14px;
+  font-family: var(--ce-mono);
+  font-size: 0.75rem;
+  color: var(--ce-slate);
+  margin-top: 26px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ce-line);
+  flex-wrap: wrap;
+}
+
+.article__head .meta span {
+  white-space: nowrap;
+}
+
+.prose {
+  font-family: var(--ce-serif);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--ce-prose);
+  max-width: var(--ce-read);
+  margin: 0 auto;
+}
+
+.prose h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 2.2em 0 0.6em;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.8em 0 0.5em;
+}
+
+.prose p {
+  margin: 0 0 1.1em;
+}
+
+.prose a {
+  color: var(--ce-teal);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.3em;
+  margin: 0 0 1.1em;
+}
+
+.prose li {
+  margin: 0.3em 0;
+}
+
+.prose blockquote {
+  margin: 1.6em 0;
+  padding: 8px 0 8px 22px;
+  border-left: 3px solid var(--ce-amber);
+  color: var(--ce-slate);
+  font-style: italic;
+}
+
+/* an aside set off by a plain left rule, not a tinted box */
+.callout {
+  margin: 1.8em 0;
+  padding: 2px 0 2px 22px;
+  border-left: 2px solid var(--ce-amber);
+}
+
+.callout--tip {
+  border-left-color: var(--ce-teal);
+}
+
+.callout__title {
+  margin: 0 0 4px;
+  font-family: var(--ce-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ce-ink);
+}
+
+.callout__body > :first-child { margin-top: 0; }
+.callout__body > :last-child { margin-bottom: 0; }
+
+.prose code {
+  font-family: var(--ce-mono);
+  font-size: 0.88em;
+  background: var(--ce-paper-2);
+  padding: 2px 6px;
+  border-radius: var(--ce-r);
+}
+
+/* light listing, matching the hero proof; !important beats Chroma's inline
+   background (markup.highlight noClasses = true) */
+.prose pre {
+  background: var(--ce-paper-2) !important;
+  color: var(--ce-ink);
+  padding: 20px 22px;
+  border-radius: var(--ce-r);
+  overflow-x: auto;
+  font-family: var(--ce-mono);
+  font-size: 0.86rem;
+  line-height: 1.7;
+  margin: 1.4em 0;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+.prose img {
+  margin: 1.6em 0;
+}
+
+/* ---------- prose tables ---------- */
+/* wide tables scroll inside their own box rather than widening the page */
+.table-wrap {
+  margin: 1.8em 0;
+  overflow-x: auto;
+}
+
+/* sized to its content, not to the prose column — but never wider than it,
+   and centered in the column like a figure */
+/* booktabs-style: heavy top and bottom rules, a light mid rule, no stripes */
+.prose table {
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+  border-collapse: collapse;
+  font-family: var(--ce-sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-top: 2px solid var(--ce-ink);
+  border-bottom: 2px solid var(--ce-ink);
+}
+
+.prose thead th {
+  padding: 8px 16px;
+  font-weight: 600;
+  color: var(--ce-ink);
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--ce-ink);
+}
+
+.prose tbody td {
+  padding: 8px 16px;
+  vertical-align: top;
+}
+
+/* the label column carries a touch more weight than the data it introduces */
+.prose tbody tr > :first-child {
+  color: var(--ce-ink);
+  font-weight: 600;
+}
+
+/* right-aligned columns are numeric — align the digits.
+   Data cells only; headers keep one uniform size across all columns. */
+.prose tbody td[style*="right"] {
+  font-family: var(--ce-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.88em;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--ce-line);
+  margin: 2.4em 0;
+}
+
+/* ---------- about / team ---------- */
+.about-intro {
+  align-items: start;
+}
+
+/* text stays top-aligned; the image / proof terminal sit vertically centered next to it */
+.about-intro .showcase,
+.about-intro .proof {
+  align-self: center;
+}
+
+/* reuses .hero__grid; top-align text instead of the hero's centering */
+/* shared page lead paragraph (about intro, contact, services, list pages, blog heads, 404) */
+.lede {
+  font-family: var(--ce-serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: var(--ce-ink-soft);
+  max-width: 60ch;
+  margin: 0 0 1.15em;
+}
+
+.page-head .lede,
+.article__head .lede {
+  margin-top: 22px;
+}
+
+/* separate from the h1 above; about's lead stays top-aligned */
+.about-body {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--ce-prose);
+  max-width: 72ch;
+}
+
+.about-body p {
+  margin: 0 0 1.05em;
+}
+
+.about-body p:last-child {
+  margin-bottom: 0;
+}
+
+.about-body a {
+  color: var(--ce-teal);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 32px;
+}
+
+.team-card {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 20px;
+}
+
+.team-avatar {
+  position: relative;
+  width: 96px;
+  align-self: center;
+  aspect-ratio: 1 / 1;
+  background: var(--ce-ink);
+  overflow: hidden;
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.team-avatar .mono {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ce-mono);
+  font-weight: 700;
+  font-size: 1.45rem;
+  color: var(--ce-paper);
+  letter-spacing: 0.04em;
+}
+
+.team-avatar .mono::before,
+.team-avatar .mono::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  opacity: 0.55;
+}
+
+.team-avatar .mono::before {
+  top: 8px;
+  left: 8px;
+  border-top: 2px solid var(--ce-amber);
+  border-left: 2px solid var(--ce-amber);
+}
+
+.team-avatar .mono::after {
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 2px solid var(--ce-amber);
+  border-right: 2px solid var(--ce-amber);
+}
+
+.team-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.team-info h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.team-role {
+  font-family: var(--ce-mono);
+  font-size: 0.75rem;
+  color: var(--ce-ochre);
+  margin: 6px 0 0;
+}
+
+.team-bio {
+  color: var(--ce-slate);
+  font-size: 0.92rem;
+  line-height: 1.62;
+  margin: 15px 0 0;
+}
+
+/* pinned to the bottom so the buttons line up with the avatar's lower edge */
+.team-links {
+  display: flex;
+  gap: 9px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.team-links a {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ce-slate);
+  transition: color .14s;
+}
+
+.team-links a:hover {
+  color: var(--ce-teal);
+}
+
+.team-links svg {
+  width: 17px;
+  height: 17px;
+}
+
+.team-links .muted {
+  font-family: var(--ce-mono);
+  font-size: 0.72rem;
+  color: var(--ce-slate);
+  align-self: center;
+  opacity: 0.7;
+}
+
+/* ---------- footer ---------- */
+footer.foot {
+  background: var(--ce-ink);
+  color: var(--ce-on-ink-dim);
+  padding: 36px 0 36px;
+  margin-top: 56px;
+}
+
+.foot__grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 28px;
+}
+
+.foot h5 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ce-on-ink-faint);
+  margin: 0 0 14px;
+}
+
+.foot ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.foot ul a {
+  font-size: 0.92rem;
+  color: var(--ce-on-ink);
+  transition: color .14s;
+}
+
+.foot ul a:hover {
+  color: var(--ce-amber);
+}
+
+.foot__brand p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 36ch;
+  margin: 18px 0 0;
+}
+
+.foot__spinoff {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.78;
+  transition: opacity .14s;
+}
+
+.foot__spinoff:hover {
+  opacity: 1;
+}
+
+.foot__spinoff-label {
+  font-size: 0.8rem;
+  color: var(--ce-on-ink-faint);
+}
+
+.foot__spinoff img {
+  height: 14px;
+  width: auto;
+  display: block;
+}
+
+.foot__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  font-size: 0.8rem;
+  color: var(--ce-on-ink-faint);
+}
+
+.foot__mark {
+  font-family: var(--ce-mono);
+  font-size: 0.75rem;
+}
+
+/* ---------- embedded demos (layout: embed, iframed into posts) ---------- */
+/* The parent iframe sizes itself to the document's scrollHeight, so the body
+   must not stretch to the viewport (min-height: 100vh would only ever grow). */
+body.embed {
+  display: block;
+  min-height: 0;
+  background: transparent;
+  padding: 4px;
+}
+
+/* two columns separated by space — no boxed panels */
+.demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.demo__title {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.demo__note {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  color: var(--ce-slate);
+}
+
+.demo form {
+  display: flex;
+  flex-direction: column;
+}
+
+.demo label {
+  margin: 14px 0 4px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ce-ink-soft);
+}
+
+.demo input,
+.demo textarea,
+.demo select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--ce-line);
+  border-radius: var(--ce-r);
+  background: var(--ce-paper);
+  color: var(--ce-ink);
+  font-family: var(--ce-mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+}
+
+.demo select,
+.demo textarea {
+  font-family: var(--ce-sans);
+  font-size: 0.95rem;
+}
+
+.demo textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.demo input:focus,
+.demo textarea:focus,
+.demo select:focus {
+  outline: 2px solid var(--ce-teal);
+  outline-offset: -1px;
+  border-color: var(--ce-teal);
+}
+
+.demo input[readonly],
+.demo textarea[readonly] {
+  background: var(--ce-paper-2);
+  color: var(--ce-slate);
+}
+
+.demo hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--ce-line);
+  margin: 22px 0 4px;
+}
+
+.demo .btn {
+  align-self: flex-start;
+  margin-top: 16px;
+}
+
+.demo .is-error {
+  color: var(--ce-danger);
+  font-weight: 600;
+}
+
+/* ---------- join.com careers widget ---------- */
+/* The widget config paints white; blend its container into the page.
+   Job-card backgrounds are drawn internally by the widget — set those in
+   the join.com dashboard (background #FDFDFB / transparent) if they remain white. */
+#join-widget,
+#join-widget > div,
+#join-widget [class*="widget"] {
+  background: transparent !important;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 920px) {
+
+  .hero__grid,
+  .two,
+  .grid-3,
+  .grid-2,
+  .cards,
+  .repo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero .showcase img {
+    width: 112%;
+    margin: -4% -6%;
+  }
+
+  .page-head h1 {
+    font-size: 2.3rem;
+  }
+
+  .article__head h1 {
+    font-size: 2.1rem;
+  }
+
+  .layer {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .layer__tags {
+    justify-content: flex-start;
+  }
+
+  /* hamburger toggle */
+  .nav__toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid var(--ce-line);
+    border-radius: var(--ce-r);
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .nav__toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 0 auto;
+    background: var(--ce-ink);
+    border-radius: 2px;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  .nav.is-open .nav__toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav.is-open .nav__toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav.is-open .nav__toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* collapsible dropdown panel */
+  .nav__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background: var(--ce-paper);
+    border-bottom: 1px solid var(--ce-line);
+    padding: 8px 0 16px;
+  }
+
+  .nav.is-open .nav__menu {
+    display: flex;
+  }
+
+  .nav__links {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    gap: 0;
+  }
+
+  .nav__links a {
+    padding: 13px 32px;
+    font-size: 1rem;
+  }
+
+  .nav__cta {
+    margin: 12px auto 0;
+    justify-content: center;
+  }
+
+  .pub {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .pub .links {
+    grid-column: 2;
+  }
+
+  /* touch: enlarge tap targets to ~44px (compact sizes stay on desktop) */
+  .team-links a {
+    width: 44px;
+    height: 44px;
+  }
+
+  .pub .links a {
+    padding: 11px 0;
+  }
+
+  .pub .links {
+    gap: 20px;
+  }
+}
+
+/* ---------- phones ---------- */
+@media (max-width: 600px) {
+  .wrap {
+    padding: 0 20px;
+  }
+
+  /* inside an iframe this is the frame's width; the prose column is ~760px,
+     so the demo only stacks on genuinely narrow screens */
+  .demo {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* reclaim vertical/horizontal space */
+  .hero {
+    padding: 64px 0 48px;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .article__head h1 {
+    font-size: 1.8rem;
+  }
+
+  section.band {
+    padding: 56px 0;
+  }
+
+  .terminal {
+    font-size: 0.78rem;
+  }
+
+  /* most "Scope of proof" lines now fit; rest scroll in-box */
+
+  .sec-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .sec-head h2 {
+    font-size: 1.7rem;
+  }
+
+  /* CTA: stack so the nowrap button always fits */
+  .cta-band {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  /* team grid: drop to a single column so cards aren't cramped on phones */
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* footer: stack brand and links so the wordmark doesn't overflow */
+  .foot__grid {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .foot__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ce-lockup__word {
+    font-size: 2.1rem;
+  }
+}
